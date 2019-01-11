@@ -1,0 +1,77 @@
+
+### config file for WutongSearch
+
+chrome_config:
+  chrome_driver_path: "chromedriver/chromedriver.exe" ### you must change this to your own driver path
+  user_data_dir: "" ###eg: D:\\chrome_driver_cache, default: ""
+  disable_image: True
+  proxy_server: "" ###eg: 127.0.0.1:1080, default:""
+  disable_window: True ###
+  two_pages_internal: 0.1 ###seconds the time btween after a page saved and before click next page
+  next_page_wait: 10 ### time(seconds) limit to wait the nextpage located
+  result_wait: 10 ### time(seconds) limit to wait the result located
+
+search_engine_config:
+  baidu: 
+    search_engine_url: "http://baidu.com/"
+    input_selector: "//input[@name='wd']"
+    next_page_selector: "//a[@class='n' and contains(text(), '下一页')]"
+    result_selector: "//div/h3/a"
+    dynamic_load_result: False
+    proxy_server: ""
+
+  gogo:
+    search_engine_url: "https://176.122.157.73:5000"
+    input_selector: "//input[@name='q']"
+    next_page_selector: "//button[contains(text(), 'Next')]"
+    result_selector: "//div[@class='entry']/a"
+    dynamic_load_result: False
+    proxy_server: ""
+  
+  duckduckgo:
+    search_engine_url: "https://duckduckgo.com/"
+    input_selector: "//input[@name='q']"
+    next_page_selector: "//a[@class='result--more__btn btn btn--full']"
+    result_selector: "//div/h2/a"
+    dynamic_load_result: True
+    proxy_server: ""
+  
+  bing:
+    search_engine_url: "https://www.bing.com/"
+    input_selector: "//input[@name='q']"
+    next_page_selector: "//a[@class='sb_pagN sb_pagN_bp b_widePag sb_bp ']"
+    result_selector: "//div/ol/li/h2/a"
+    dynamic_load_result: False
+    proxy_server: ""
+  
+  google:
+    search_engine_url: "https://www.google.com/"
+    input_selector: "//input[@name='q']"
+    next_page_selector: "//a[@id='pnnext']"
+    result_selector: "//div[@class='rc']/div/a"
+    dynamic_load_result: False
+    proxy_server: "127.0.0.1:1080"
+
+  startpage:
+    search_engine_url: "https://www.startpage.com"
+    input_selector: "//input[@name='query']"
+    next_page_selector: "//button[@name='startat']"
+    result_selector: "//div/ol/li/h3/a"
+    dynamic_load_result: False
+    proxy_server: ""
+  
+  '360': 
+    search_engine_url: "https://www.so.com/"
+    input_selector: "//input[@name='q']"
+    next_page_selector: "//a[@id='snext']"
+    result_selector: "//li[@class='res-list']/h3/a"
+    dynamic_load_result: False
+    proxy_server: ""
+  
+  soso:
+    search_engine_url: "http://soso.com/"
+    input_selector: "//input[@name='query']"
+    next_page_selector: "//a[@id='sogou_next']"
+    result_selector: "//div[@class='vrwrap']/h3/a"
+    dynamic_load_result: False
+    proxy_server: ""
